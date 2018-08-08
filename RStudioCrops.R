@@ -1,6 +1,6 @@
 #defining the location of the files involved
 #'set working sirectory' - found in 'session' tab
-setwd("~/Desktop/Crops")
+setwd("~/Documents/GitHub/BTITL2")
 
 install.packages("tidyverse")
 
