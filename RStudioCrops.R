@@ -18,3 +18,20 @@ df2 <- df1 %>%
 #displays the a full prview of the itbble in brackets
 View(df2)
 
+#formatting the time to a date and a day reading
+df3 <- df2 %>%
+  #separates date into month and year
+  separate(Date, c("Month","Year")) %>%
+  #mutate means create new variable
+  #year2 = new var what is does '20' infront of the year var
+  mutate(Year2=paste("20", Year, sep="")) %>%
+  #creates var day and every cell equals 1
+  mutate(Day=1) %>%
+  #create new var date, paste = concatonate with (sep) seperator '-'
+  mutate(Date=paste (Year, Month, Day, sep="-")) %>%
+  #select(-Month, -Year, -Day) %>% 
+  mutate(Date = ymd(Date))
+
+#checking out df3 fully
+View(df3)
+  
